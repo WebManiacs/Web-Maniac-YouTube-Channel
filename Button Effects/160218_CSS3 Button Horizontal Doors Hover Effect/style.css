@@ -1,0 +1,91 @@
+body
+{
+	background: #eceff1;
+}
+
+.maniac
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	padding: 1.07em 2em;
+	width: 500px;
+
+	font-family: Lato, sans-serif;
+	font-size: 36px;
+	vertical-align: middle;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	color: #ff00cc;
+	background: none;
+
+	border: 3px solid #ff00cc;
+	outline: none;
+	overflow: hidden;
+
+	transform: translate(-50%, -50%);
+}
+
+.maniac:before,
+.maniac:after
+{
+	content: attr(data-text);
+
+	position: absolute;
+	left: 0;
+
+	padding: 0.09em 0;
+	width: 100%;
+	height: 50%;
+
+	color: #fff;
+	background: #ff33cc;
+
+	overflow: hidden;
+	transition: transform 0.3s;
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.maniac:before
+{
+	top: 0;
+
+	padding-top: 1em;
+}
+
+.maniac:after
+{
+	bottom: 0;
+
+	line-height: 0;
+}
+
+.maniac > span
+{
+	display: block;
+
+	opacity: 0;
+
+	transform: scale3d(0.2, 0.2, 1);
+	transition: transform 0.3s, opacity 0.3s;
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.maniac:hover:before
+{
+	transform: translate3d(0, -100%, 0);
+}
+
+.maniac:hover:after
+{
+	transform: translate3d(0, 100%, 0);
+}
+
+.maniac:hover > span
+{
+	opacity: 1;
+
+	transform: scale3d(1, 1, 1);
+}

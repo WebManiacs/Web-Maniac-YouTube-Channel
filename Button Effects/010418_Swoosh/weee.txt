@@ -1,0 +1,66 @@
+<button data-default="TOUCH ME" data-hover="WHOOSH"></button>
+
+button[data-default="TOUCH ME"][data-hover="WHOOSH"]
+
+============================================================
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Lato, sans-serif;
+
+  user-select: none;
+  background: #651FFF;
+
+  perspective: 1000px;
+  overflow-y: hidden;
+}
+
+button {
+  position: relative;
+
+  padding: 4vh 8vw;
+  display: block;
+  width: 600px;
+
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 11px;
+
+  color: #000;
+  background-color: #FFF;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button::before {
+  content: attr(data-default);
+}
+
+button:active {
+  animation: spinner 220ms infinite linear;
+}
+
+button:active::before {
+  content: attr(data-hover);
+  letter-spacing: 15px;
+}
+
+@keyframes spinner {
+  from {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: rotateX(360deg);
+  }
+}

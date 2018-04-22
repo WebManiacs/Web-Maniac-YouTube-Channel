@@ -1,0 +1,59 @@
+body
+{
+  font-family: Ubuntu, sans-serif;
+
+  background: #232323;
+}
+
+.maniac
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  padding: 0 0.8em;
+  width: 300px;
+  height: 90px;
+
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #cc35ee;
+  background: transparent;
+
+  border: 3px solid #cc35ee;
+  cursor: pointer;
+
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: all .6s ease-in-out;
+}
+
+.maniac:before
+{
+  z-index: -1;
+  content: "";
+
+  position: absolute;
+  top: -115px;
+  left: -10px;
+
+  margin: auto;
+  display: block;
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+  transition: box-shadow .6s ease-in-out;
+}
+
+.maniac:hover
+{
+  color: #fff;
+}
+
+.maniac:hover:before
+{
+  box-shadow: inset 0 0 0 160px #cc35ee;
+}

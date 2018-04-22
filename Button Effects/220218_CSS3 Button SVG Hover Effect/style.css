@@ -1,0 +1,64 @@
+html, body
+{
+	height: 100%;
+
+	text-align: center;
+
+	background: #232323;
+
+	overflow: hidden;
+}
+
+.wrapper
+{
+	position: relative;
+	top: 50%;
+
+	margin: 0 auto;
+	width: 320px;
+
+	transform: translateY(-50%);
+}
+
+.shape
+{
+	stroke-dasharray: 140 540;
+	stroke-dashoffset: -474;
+	stroke-width: 8px;
+	fill: transparent;
+	stroke: #ff33cc;
+
+	border-bottom: 5px solid #000;
+	transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.text
+{
+	position: relative;
+	top: -48px;
+
+	font-family: Ubuntu;
+	font-size: 22px;
+	line-height: 32px;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+
+	color: #fff;
+
+	cursor: pointer;
+	transition: 0.8s;
+}
+
+.wrapper:hover .shape
+{
+	stroke-width: 2px;
+	stroke-dashoffset: 0;
+	stroke-dasharray: 760;
+}
+
+.wrapper:hover .text
+{
+	color: #ff33cc;
+
+	transition: 0.8s;
+}

@@ -1,0 +1,57 @@
+body
+{
+	background: #232323;
+}
+
+button
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin: 20px auto;
+	padding: 0.5em 2.5em;
+
+	font-family: Lato, sans-serif;
+	font-size: 36px;
+	font-weight: 500;
+
+	border: none;
+	border-radius: 50px;
+
+	cursor: pointer;
+
+	transform: translate(-50%, -50%);
+}
+
+button::before
+{
+	content: "";
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 25%;
+	height: 100%;
+
+	background: #66ff00;
+
+	border-radius: 50px;
+
+	transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+button .rounded
+{
+	color: #66ff00;
+
+	mix-blend-mode: difference;
+}
+
+button:hover::before
+{
+	width: 100%;
+
+	background: #66ff00;
+}

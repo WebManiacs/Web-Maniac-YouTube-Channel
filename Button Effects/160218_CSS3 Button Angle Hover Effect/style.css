@@ -1,0 +1,66 @@
+body
+{
+	background: #cfd8dc;
+}
+
+.maniac
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	padding: 0 0.8em;
+	height: 90px;
+	min-width: 350px;
+	max-width: 450px;
+
+	font-family: Lato, sans-serif;
+	font-size: 36px;
+	line-height: 90px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	color: #3f51b5;
+	background: transparent;
+	border: 3px solid #3f51b5;
+
+	overflow: hidden;
+	transform: translate(-50%, -50%);
+	transition: border-color 0.5s, color 0.5s;
+	transition-timing-function: cubic-bezier(0.2, 1, 0.5, 1);
+}
+
+.maniac:before
+{
+	z-index: -1;
+	content: "";
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 150%;
+	height: 100%;
+
+	background: #37474f;
+
+	transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+	transform-origin: -10% 100%;
+	transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
+}
+
+.maniac:hover
+{
+	color: #fff;
+	border-color: #3f51b5;
+}
+
+.maniac:hover:before
+{
+	background-color: #3f51b5;
+
+	opacity: 1;
+
+	transform: rotate3d(0, 0, 1, 0deg);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.5, 1);
+}
