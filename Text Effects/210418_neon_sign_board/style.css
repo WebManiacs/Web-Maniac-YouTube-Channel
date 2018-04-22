@@ -1,0 +1,80 @@
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  font-family: 'Exo 2', sans-serif;
+
+  background: #000;
+  overflow: hidden;
+}
+
+:root
+{
+  font-size: 15px;
+
+  --neon-text-color: #f40;
+  --neon-border-color: #08f;
+}
+
+h1
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  padding: 4rem 15rem 5.5rem;
+
+  font-size: 20rem;
+  font-weight: 200;
+  font-style: italic;
+  text-transform: uppercase;
+
+  border: 0.4rem solid #fff;
+  border-radius: 2rem;
+
+  color: #fff;
+
+  transform: translate(-50%, -85%);
+  animation: neon 1.5s infinite alternate;
+}
+
+h1::selection
+{
+  color: var(--neon-text-color);
+  background-color: var(--neon-border-color);
+}
+
+h1:focus
+{
+  outline: none;
+}
+
+@keyframes neon {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%
+  {
+    text-shadow:
+    -0.2rem -0.2rem 1rem #fff,
+    0.2rem 0.2rem 1rem #fff,
+    0 0 2rem var(--neon-text-color),
+    0 0 4rem var(--neon-text-color),
+    0 0 6rem var(--neon-text-color),
+    0 0 8rem var(--neon-text-color),
+    0 0 10rem var(--neon-text-color);
+
+    box-shadow:
+    0 0 .5rem #fff,
+    inset 0 0 .5rem #fff,
+    0 0 8rem var(--neon-border-color),
+    inset 0 0 2rem var(--neon-border-color),
+    0 0 4rem var(--neon-border-color),
+    inset 0 0 4rem var(--neon-border-color);
+  }
+  20%, 24%, 55%
+  {
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
