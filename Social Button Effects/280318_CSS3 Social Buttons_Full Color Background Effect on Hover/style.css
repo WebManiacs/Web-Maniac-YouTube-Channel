@@ -1,0 +1,124 @@
+body
+{
+  background: #111;
+}
+
+.wrapper
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  transition: all .5s ease-out;
+}
+
+.wrapper-box
+{
+  position: relative;
+
+  margin: 0 auto;
+  padding-left: 30px;
+  width: 285px;
+  height: 260px;
+
+  text-align: center;
+
+  transition: all .5s ease-in;
+  transition: transform .7s;
+  transform: rotate(45deg);
+}
+
+.wrapper-box a
+{
+  display: block;
+  height: 6em;
+  width: 6em;
+  line-height: 6em;
+
+  text-align: center;
+
+  color: rgba(255,255,255,.6);
+
+  border: 1px solid rgba(255,255,255,.5);
+  transition: transform .7s;
+}
+
+.wrapper-box .twitter
+{
+  position: absolute;
+  top: 45%;
+
+  color: #00aced;
+  border-color: #00aced;
+}
+
+.wrapper-box .facebook
+{
+  position: absolute;
+  right: 22%;
+
+  color: #3b5998;
+  border-color: #3b5998;
+}
+
+.wrapper-box .googleplus
+{
+  position: absolute;
+
+  color: #dd4b39;
+  border-color: #dd4b39;
+}
+
+.wrapper-box .instagram
+{
+  position: absolute;
+  top: 45%;
+  left: 47%;
+
+  color: #ff0033;
+  border-color: #ff0033;
+}
+
+.wrapper-box a i
+{
+  font-size: 1.2em;
+  transform: rotate(-45deg);
+}
+
+.wrapper-box a:hover
+{
+  color: rgba(255,255,255,1);
+  background: transparent;
+
+  border: 1px solid rgba(255,255,255,.5);
+  transform: scale(1.3,1.3);
+}
+
+.color-twitter
+{
+  background-color: #00aced !important;
+}
+
+.color-facebook
+{
+  background-color: #3b5998 !important;
+}
+
+.color-googleplus
+{
+  background-color: #dd4b39 !important;
+}
+
+.color-instagram
+{
+  background-color: #ff0033 !important;
+}
+
+.color-twitter,
+.color-facebook,
+.color-googleplus,
+.color-instagram
+{
+  transition: all .5s ease-in-out;
+}

@@ -1,0 +1,12 @@
+$(".twitter").hover(function(){
+  $("body").toggleClass("color-twitter");
+});
+$(".facebook").hover(function(){
+  $("body").toggleClass("color-facebook");
+});
+$(".googleplus").hover(function(){
+  $("body").toggleClass("color-googleplus");
+});
+$(".instagram").hover(function(){
+  $("body").toggleClass("color-instagram");
+});
