@@ -1,0 +1,192 @@
+html
+{
+	font-size: 1vh;
+}
+
+body
+{
+	height: 100vh;
+	width: 100vw;
+
+	font-family: "Average Sans", sans-serif;
+	font-size: 2rem;
+
+	color: #fff;
+
+	cursor: pointer;
+}
+
+.slider
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	height: 100vh;
+
+	overflow:  hidden;
+}
+
+.slide
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.slide:nth-child(1) .panel>*
+{
+	color: #7594f0;
+	background: #636fee;
+}
+
+.slide:nth-child(2) .panel>*
+{
+	color: #bdd194;
+	background: #a8cb86;
+}
+
+.slide:nth-child(3) .panel>*
+{
+	color: #75cdf0;
+	background: #63afee;
+}
+
+.slide:nth-child(4) .panel>*
+{
+	color: #d65c5c;
+	background: #d24b62;
+}
+
+.slide .center
+{
+	opacity: 0;
+	transition: opacity linear 300ms;
+}
+
+.slide .panel
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.slide .top,
+.slide .bottom
+{
+	z-index: 1;
+	content: attr(data-back);
+	
+	position: absolute;
+	
+	height: 50vh;
+	width: 100vw;
+
+	font-size: 50vh;
+	font-weight: 800;
+	text-align: center;
+
+	overflow: hidden;
+	box-sizing: border-box;
+
+	transition: transform 600ms cubic-bezier(1, 0.005, 0.57, 0.865);
+}
+
+.slide .top::after,
+.slide .bottom::after
+{
+	content: attr(data-back);
+	position: relative;
+	display: inline-block;
+	font-family: "BenchNine", sans-serif;
+	transition: transform 600ms cubic-bezier(1, 0.005, 0.57, 0.865);
+}
+
+.slide .top
+{
+	line-height: 100vh;
+	transform: translateY(-50vh);
+}
+
+.slide .top::after
+{
+	transform: translateY(50vh);
+}
+
+.slide .bottom
+{
+	bottom: 0;
+	line-height: 0vh;
+	transform: translateY(50vh);
+}
+
+.slide .bottom::after
+{
+	transform: translateY(-50vh);
+}
+
+.slide.active .center
+{
+	opacity: 1;
+	transition: opacity linear 300ms;
+	transition-delay: 600ms;
+}
+
+.slide.active .top,
+.slide.active .bottom
+{
+	z-index: -1;
+
+	transition: none;
+	transform: translateY(0);
+}
+
+.slide.active .top::after,
+.slide.active .bottom::after
+{
+	transition: transform cubic-bezier(0.23, 1, 0.32, 1) 1200ms;
+	transform: translateY(0);
+}
+
+.center
+{
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	text-align: center;
+
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.center h1
+{
+	line-height: 1;
+
+	font-family: "BenchNine", sans-serif;
+	font-size: 10vh;
+}
+
+/* .sig
+{
+	position: fixed;
+	bottom: 8px;
+	right: 8px;
+
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: 100;
+	text-decoration: none;
+	letter-spacing: 2px;
+
+	color: rgba(255,255,255,0.4);
+} */
