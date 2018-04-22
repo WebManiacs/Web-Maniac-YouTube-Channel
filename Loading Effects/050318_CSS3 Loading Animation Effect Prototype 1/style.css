@@ -1,0 +1,85 @@
+#loader-page
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	height: 100%;
+	width: 100%;
+
+	background: #232323;
+}
+
+.loader-name
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin-top: -10px;
+	margin-left: -52px;
+
+	font-family: Lato, sans-serif;
+	font-size: 125%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	color: #00ff00;
+}
+
+.loader-1,
+.loader-2,
+.loader-3,
+.loader-4
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+
+	margin-top: -100px;
+	margin-left: -100px;
+	width: 200px;
+	height: 200px;
+	box-sizing: border-box;
+
+	border-radius: 50%;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+.loader-1
+{
+	border-top: 10px solid #00ff00;
+	animation: loader 0.8s infinite linear;
+}
+
+.loader-2
+{
+	border-top: 10px solid #ffdc00;
+	animation: loader 1.2s infinite linear;
+}
+
+.loader-3
+{
+	border-top: 10px solid #ff000d;
+	animation: loader 1.4s infinite linear;
+}
+
+.loader-4
+{
+	border-top: 10px solid #ff33cc;
+	animation: loader 1.8s infinite linear;
+}
+
+@keyframes loader
+{
+	from
+	{
+		transform:  rotate(0deg);
+	}
+	to
+	{
+		transform:  rotate(360deg);
+	}
+}

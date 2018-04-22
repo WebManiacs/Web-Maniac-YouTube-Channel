@@ -1,0 +1,152 @@
+<h1 class="no-transition">
+<span>L</span>
+<span>o</span>
+<span>a</span>
+<span>d</span>
+<span>i</span>
+<span>n</span>
+<span>g</span>
+</h1>
+
+h1>span*7
+-------------------------------
+
+html {
+	height: 100%;
+}
+
+body {
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	font-family: Monaco, monospace;
+	font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+	
+	overflow-x: hidden;
+	
+	animation: rainbow 25s infinite;
+}
+
+h1 {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	
+	margin-top: -50px;
+	margin-left: -200px;
+	width: 400px;
+	height: 55px;
+	
+	font-size: 80px;
+	
+	color: #556270;
+	
+	cursor: pointer;
+}
+
+.transition span {
+	transform: rotateX(360deg);
+}
+
+span {
+	position: absolute;
+
+	width: 20px;
+	
+	transform-origin: 50% 50% 80px;
+	transform: rotateX(0deg);
+}
+
+h1.no-transition span {
+	transition: all 0s !important;
+	transform: rotateX(0deg) !important;
+}
+
+span:nth-child(1) {
+	left: 10px;
+	
+	transition: all 0.7s ease 0.125s;
+}
+
+span:nth-child(2) {
+	left: 62px;
+	
+	transition: all 0.7s ease 0.25s;
+}
+
+span:nth-child(3) {
+	left: 115px;
+	
+	transition: all 0.7s ease 0.375s;
+}
+
+span:nth-child(4) {
+	left: 170px;
+	
+	transition: all 0.7s ease 0.5s;
+}
+
+span:nth-child(5) {
+	left: 220px;
+	
+	transition: all 0.7s ease 0.625s;
+}
+
+span:nth-child(6) {
+	left: 280px;
+	
+	transition: all 0.7s ease 0.75s;
+}
+
+span:nth-child(7) {
+	left: 330px;
+	
+	transition: all 0.7s ease 0.875s;
+}
+
+h1:hover span {
+	color: deeppink;
+	
+	transform: rotateX(360deg);
+}
+
+@keyframes rainbow {
+	0% {
+		background: #FFFF99;
+	}
+	25% {
+		background: #FF9966;
+	}
+	50% {
+		background: #FF9999;
+	}
+	75% {
+		background: #FF99FF;
+	}
+	100% {
+		background: #9999FF;
+	}
+}
+
+--------------------------------
+
+var container = document.querySelector( 'h1' );
+var palette = [ '#C62828', '#00C853', '#C62828', '#4527A0'];
+var paletteIndex = 0;
+
+setInterval( function() {
+  
+  container.className = 'no-transition';
+  
+  setTimeout( function() {
+	container.style.color = palette[paletteIndex];
+	container.className = 'transition';
+	paletteIndex += 1;
+	paletteIndex %= palette.length;
+  }, 100 );
+  
+  
+}, 2500 );

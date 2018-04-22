@@ -1,0 +1,116 @@
+body
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background: #232323;
+
+  overflow-y: hidden;
+}
+
+div
+{
+  position: relative;
+  width: 30px;
+  height: 30px;
+
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #b9e9bb;
+
+  border: 1px solid #fff;
+  border-radius: 3px;
+
+  animation: 1.5s linear infinite;
+  animation-name: anim-1;
+}
+
+@keyframes anim-1
+{
+  20%
+  {
+    transform: rotate(-30deg) scale(1);
+  }
+  50%
+  {
+    background-color: #fff;
+
+    transform: rotate(360deg) scale(4);
+  }
+  80%
+  {
+    transform: rotate(720deg) scale(0.8);
+  }
+  90%,
+  100%
+  {
+    background-color: #b9e9bb;
+
+    transform: rotate(720deg) scale(1);
+  }
+}
+
+div::before,
+div::after
+{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: #6bd170;
+  border-radius: 3px;
+}
+
+div::before
+{
+  right: calc(100% + 2px);
+
+  animation: 1.5s 0.2s ease infinite;
+  animation-name: anim-2;
+}
+
+@keyframes anim-2
+{
+  65%
+  {
+    background-color: #fff;
+
+    transform: translate(-150%, -100%) scale(0.2) rotate(-180deg);
+  }
+  70%,
+  100%
+  {
+    background-color: #6bd170;
+
+    transform: translate(0, 0) scale(1) rotate(-360deg);
+  }
+}
+
+div::after
+{
+  left: calc(100% + 2px);
+
+  animation: 1.5s 0.2s ease infinite;
+  animation-name: anim-3;
+}
+
+@keyframes anim-3
+{
+  65%
+  {
+    background-color: #fff;
+
+    transform: translate(150%, 100%) scale(0.2) rotate(180deg);
+  }
+  70%,
+  100%
+  {
+    background-color: #6bd170;
+
+    transform: translate(0, 0) scale(1) rotate(360deg);
+  }
+}
