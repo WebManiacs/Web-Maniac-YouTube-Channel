@@ -1,0 +1,107 @@
+html,
+body
+{
+	margin: 0;
+	padding: 0;
+
+	height: 100%;
+}
+
+.columnWrapper
+{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	min-height: 100%;
+}
+
+.column
+{
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	width: 25%;
+
+	transition: all 0.5s ease;
+}
+
+.column.wide
+{
+	width: 100% !important;
+}
+
+.red
+{
+	background: #ff3300;
+}
+
+.green
+{
+	background: #99ff33;
+}
+
+.yellow
+{
+	background: #ffff00;
+}
+
+.blue
+{
+	background: #0099ff;
+}
+
+.yellow p,
+.green p
+{
+	color: #232323;
+}
+
+p
+{
+	margin: 0 auto;
+
+	font-size: 30px;
+	font-family: Lato, sans-serif;
+	font-weight: bold;
+	text-align: center;
+
+	color: #fff;
+
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+.maniac
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	font-size: 100px;
+	font-family: Lato, sans-serif;
+	font-weight: bold;
+	text-align: center;
+
+	color: #232323;
+
+	opacity: 1;
+	transform: translate(-50%, -50%);
+	transition: all 0.5s ease;
+}
+
+.red>.maniac,
+.blue>.maniac
+{
+	color: #fff;
+}
+
+.column:hover p
+{
+	opacity: 1;
+}
+
+.column:hover .maniac
+{
+	opacity: 0;
+}
