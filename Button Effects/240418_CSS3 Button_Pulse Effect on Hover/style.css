@@ -1,0 +1,60 @@
+body
+{
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  font: 700 4em "Ubuntu", sans-serif;
+  text-align: center;
+
+  background: #17181c;
+
+  overflow: hidden;
+}
+
+.pulse
+{
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+button
+{
+  margin: 0.5em;
+  padding: 1em 2em;
+  line-height: 1;
+
+  font: inherit;
+
+  color: var(--color);
+
+  background: none;
+  border: 2px solid;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover,
+button:focus
+{
+  border-color: var(--hover);
+  color: #fff;
+}
+
+.pulse:hover,
+.pulse:focus
+{
+  animation: pulse .7s;
+  box-shadow: 0 0 0 2em rgba(255,255,255,0);
+}
+
+@keyframes pulse {
+  0%
+  {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
